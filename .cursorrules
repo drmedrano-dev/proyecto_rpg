@@ -1,0 +1,27 @@
+# PROJECT CONTEXT: TURN-BASED 2D RPG (PYGAME-CE)
+
+## Overview
+We are a 6-person software development team building a 2D turn-based RPG (Pokémon-style exploration + menu-based combat) using Python and `pygame-ce` (Pygame Community Edition). 
+
+## Strict Coding Standards & Rules
+1. **Language:** All code (variable names, class names, methods, file names, and comments) MUST be written in **English**. Explanations to me can be in Spanish.
+2. **Paradigm:** Strictly Object-Oriented Programming (OOP). Keep logic decoupled from rendering (`pygame.draw` or `blit` calls belong ONLY in `ui.py` or dedicated render methods, never inside math/combat logic).
+3. **No Magic Numbers:** Never hardcode screen dimensions, FPS, or RGB colors. Always import them from `config.py`.
+4. **Input Handling:** Never use console `input()`. All interactions happen via Pygame event loops or method arguments.
+
+## Directory Architecture & Contracts
+- `main.py` : Entry point. Captures `events = pygame.event.get()` once per frame and orchestrates the state machine (`"MENU"`, `"EXPLORATION"`, `"COMBAT"`).
+- `config.py` : Global constants (`SCREEN_WIDTH = 800`, `SCREEN_HEIGHT = 600`, `TILE_SIZE = 32`, `FPS = 60`, RGB color tuples).
+- `src/entities.py` :
+  - `Creature(name, level, max_hp, attack, defense)` : Data model holding `hp`, `max_hp`, `attack`, `defense`, `sprite`. Methods: `take_damage(amount)`, `heal(amount)`, `attack_target(target)`, `is_alive() -> bool`.
+- `src/inventory.py` :
+  - `Item(name, item_type, value)` and `Inventory()` : Data model managing item dictionary/list. Methods: `add_item(item, quantity=1)`, `use_item(item_name, target_creature) -> bool`.
+- `src/exploration.py` :
+  - `WorldMap` (or module functions) : Exposes `handle_events(events)`, `update()` (uses `pygame.key.get_pressed()` for continuous movement), and `render(screen)`. Handles map boundaries and random encounter triggers.
+- `src/combat.py` :
+  - `CombatEngine(player_creature, enemy_creature)` : Exposes `handle_events(events)` (uses `KEYDOWN` for single-tap menu inputs), `update()`, and `render(screen)`. Manages `is_player_turn` (bool), `process_turn(action)`, and `check_winner()`.
+- `src/ui.py` :
+  - `UIRenderer` : Helper methods for drawing HP bars, battle menus, and dialogue boxes using `Creature` and `CombatEngine` attributes.
+
+## Your Role
+Act as a senior Python/Pygame architect. Whenever I ask for code or a review, strictly respect these class names, method signatures, and folder paths so all 6 team members can merge their branches without conflicts.
