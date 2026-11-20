@@ -1,4 +1,4 @@
-# Turn-Based 2D RPG (Pygame-CE)
+# Turn Based 2D RPG with Pygame-CE
 
 A 2D turn-based RPG developed in Python using **Pygame Community Edition (`pygame-ce`)**.
 
@@ -40,5 +40,5 @@ A 2D turn-based RPG developed in Python using **Pygame Community Edition (`pygam
 
 - `main.py`: Entry point, game loop, and state machine.
 - `config.py`: Global constants (screen dimensions, FPS, colors).
-- `src/`: Core object-oriented game logic (`entities.py`, `combat.py`, `inventory.py`, `exploration.py`, `ui.py`).
+- `src/`: Core object oriented game logic (`entities.py`, `combat.py`, `inventory.py`, `exploration.py`, `ui.py`).
 - `assets/`: Sprites, maps, and audio files.
