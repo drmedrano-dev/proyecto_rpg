@@ -13,3 +13,8 @@ BLACK = (0, 0, 0)
 BG_COLOR = (30, 30, 30)
 HP_HIGH = (46, 204, 113)
 HP_LOW = (231, 76, 60)
+
+# HP Bar
+HP_BAR_WIDTH = 120
+HP_BAR_HEIGHT = 12
+HP_BAR_BG = (80, 80, 80)   
