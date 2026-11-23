@@ -23,5 +23,14 @@ We are a 6-person software development team building a 2D turn-based RPG (Pokém
 - `src/ui.py` :
   - `UIRenderer` : Helper methods for drawing HP bars, battle menus, and dialogue boxes using `Creature` and `CombatEngine` attributes.
 
+## Git Workflow (from GIT_WORKFLOW.md)
+- Never push to main directly; use PRs with 1 approval
+- Branch naming: feat/module or fix/<module>
+- Sync with main daily: git switch main && git pull && git switch feat/<module> && git merge main
+- If a conflict appears, resolve in your branch, never on main
+- Use `git switch -c` (not `git checkout -b`) for new branches
+- If you need to switch branches with uncommitted work: git stash push -m "wip: ..."   
+- Dependencies: edit requirements.txt manually (one package per line, format: name>=version). Never use pip freeze.
+
 ## Your Role
 Act as a senior Python/Pygame architect. Whenever I ask for code or a review, strictly respect these class names, method signatures, and folder paths so all 6 team members can merge their branches without conflicts.
