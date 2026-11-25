@@ -129,6 +129,9 @@ git status
 
 # Push final. Luego abre el PR en GitHub
 git push origin feat/nombre-del-modulo
+# Después de mergear el PR en GitHub, elimina la rama:
+# (botón "Delete branch" en la página del PR, o:)
+git branch -d feat/nombre-del-modulo   
 ```
 
 ## 11. Recuperación de Errores (`git restore` / `git revert`) [SHOULD]
