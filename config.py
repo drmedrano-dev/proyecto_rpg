@@ -18,3 +18,6 @@ HP_LOW = (231, 76, 60)
 HP_BAR_WIDTH = 120
 HP_BAR_HEIGHT = 12
 HP_BAR_BG = (80, 80, 80)   
+
+# Minimum Damage
+MIN_DAMAGE = 1

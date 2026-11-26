@@ -1,3 +1,5 @@
+from config import MIN_DAMAGE
+
 class Creature:
     def __init__(self, name: str, level: int, max_hp: int, attack: int, defense: int, sprite=None):
         self.name = name
@@ -15,7 +17,7 @@ class Creature:
         self.hp = min(self.max_hp, self.hp + amount)
 
     def attack_target(self, target: "Creature") -> int:
-        damage = max(1, self.attack - target.defense)
+        damage = max(MIN_DAMAGE, self.attack - target.defense)
         target.take_damage(damage)
         return damage
 
